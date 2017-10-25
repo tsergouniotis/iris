@@ -1,0 +1,26 @@
+swarm:
+  flyway:
+    jdbc-password: iris
+    jdbc-user: iris
+    jdbc-url: jdbc:postgresql://irisdb:5432/iris
+  datasources:
+    jdbc-drivers:
+      org.postgresql:
+        driver-class-name: org.postgresql.Driver
+        xa-datasource-name: org.postgresql.xa.PGXADataSource
+        driver-module-name: org.postgresql
+    data-sources:
+      irisds:
+        connection-url: jdbc:postgresql://irisdb:5432/iris
+        driver-name: org.postgresql
+        jndi-name: java:/jboss/datasources/irisds
+        password: iris
+        user-name: iris
+  logging:
+    console-handlers:
+      org.hibernate:
+        level: debug
+        formatter: '%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n'
+      org.flyway:
+        level: debug
+        formatter: '%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n'
