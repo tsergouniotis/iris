@@ -3,6 +3,8 @@ swarm:
     jdbc-password: iris
     jdbc-user: iris
     jdbc-url: jdbc:postgresql://irisdb:5432/iris
+  cdi:
+    require-bean-descriptor: false
   datasources:
     jdbc-drivers:
       org.postgresql:
@@ -16,11 +18,4 @@ swarm:
         jndi-name: java:/jboss/datasources/irisds
         password: iris
         user-name: iris
-  logging:
-    console-handlers:
-      org.hibernate:
-        level: debug
-        formatter: '%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n'
-      org.flyway:
-        level: debug
-        formatter: '%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%E%n'
+  logging: INFO

@@ -1,17 +1,17 @@
 package com.tns.ml.iris.rest;
 
-import java.util.List;
+import java.util.Collection;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.tns.ml.iris.domain.Iris;
 import com.tns.ml.iris.repository.IrisRepository;
-
-import javax.ws.rs.GET;
-import javax.ws.rs.Produces;
 
 @ApplicationScoped
 @Path("/iris")
@@ -21,9 +21,9 @@ public class IrisEndpoint {
 	private IrisRepository irisRepository;
 
 	@GET
-	@Produces("text/json")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response doGet() {
-		List<Iris> res = irisRepository.findAll();
+		Collection<Iris> res = irisRepository.findAll();
 		return Response.ok(res).build();
 	}
 }
