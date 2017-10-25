@@ -1,0 +1,15 @@
+swarm:
+  flyway:
+    jdbc-password: iris
+    jdbc-user: iris
+    jdbc-url: jdbc:postgresql://irisdb:5432/iris
+  cdi:
+    require-bean-descriptor: false
+  datasources:
+    data-sources:
+      irisds:
+        connection-url: jdbc:postgresql://irisdb:5432/iris
+        driver-name: postgresql
+        jndi-name: java:/jboss/datasources/irisds
+        password: iris
+        user-name: iris
