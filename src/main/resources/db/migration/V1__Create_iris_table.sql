@@ -1,9 +1,9 @@
 create table flowers (
-    DATABASE_ID numeric(11) not null,
-    petal_length numeric(11) not null,
-    petal_width numeric(11) not null,
-    sepal_length numeric(11) not null,
-    sepal_width numeric(11) not null,
+    DATABASE_ID numeric(6,2) not null,
+    petal_length numeric(6,2) not null,
+    petal_width numeric(6,2) not null,
+    sepal_length numeric(6,2) not null,
+    sepal_width numeric(6,2) not null,
     class text not null
 );
 

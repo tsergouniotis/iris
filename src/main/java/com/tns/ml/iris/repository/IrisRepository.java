@@ -4,4 +4,6 @@ import com.tns.ml.iris.domain.Iris;
 
 public interface IrisRepository extends Repository<Iris, Long> {
 
+	void saveAll();
+
 }

@@ -1,7 +1,5 @@
 package com.tns.ml.iris.domain;
 
-import java.util.Optional;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +18,7 @@ public class Iris {
 	@SequenceGenerator(name = "FLOWERSEQ", sequenceName = "flowerseq", allocationSize = 50)
 	private Long id;
 
-	@Column(name = "petal_pength")
+	@Column(name = "petal_length")
 	private Double petalLength;
 
 	@Column(name = "petal_width")
@@ -80,8 +78,8 @@ public class Iris {
 		this.sepalWidth = sepalWidth;
 	}
 
-	public Optional<String> getCategory() {
-		return Optional.ofNullable(this.category);
+	public String getCategory() {
+		return this.category;
 	}
 
 	public void setCategory(String category) {

@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -19,6 +20,14 @@ public class IrisEndpoint {
 
 	@Inject
 	private IrisRepository irisRepository;
+
+	@POST()
+	@Path("/save")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response save() {
+		irisRepository.saveAll();
+		return Response.ok().build();
+	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
